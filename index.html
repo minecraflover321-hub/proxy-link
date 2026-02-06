@@ -1,155 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PROXY | Cyber Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROXY | Official Portfolio</title>
+    <style>
+        :root {
+            --primary: #00f2ff;
+            --secondary: #7000ff;
+            --bg: #050505;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --text: #ffffff;
+        }
 
-<style>
-body{
-    margin:0;
-    font-family: 'Segoe UI', sans-serif;
-    background: radial-gradient(circle at top, #0f2027, #000);
-    color:#eaeaea;
-}
-.container{
-    max-width:900px;
-    margin:auto;
-    padding:20px;
-}
-.card{
-    background: rgba(255,255,255,0.05);
-    border-radius:16px;
-    padding:25px;
-    margin-bottom:30px;
-    box-shadow:0 0 25px rgba(0,255,255,0.08);
-}
-.profile{
-    text-align:center;
-}
-.profile img{
-    width:150px;
-    height:150px;
-    border-radius:50%;
-    border:3px solid #00ffee;
-    box-shadow:0 0 20px #00ffee;
-}
-h1{
-    margin:15px 0 5px;
-    color:#00ffee;
-    letter-spacing:2px;
-}
-.tagline{
-    font-style:italic;
-    opacity:0.9;
-}
-.section-title{
-    font-size:22px;
-    margin-bottom:15px;
-    color:#00ffee;
-    border-bottom:1px solid rgba(0,255,255,0.3);
-    padding-bottom:8px;
-}
-.info p{
-    margin:6px 0;
-}
-.highlight{
-    color:#00ffee;
-}
-ul{
-    padding-left:20px;
-}
-ul li{
-    margin:10px 0;
-}
-a{
-    color:#00ffee;
-    text-decoration:none;
-}
-a:hover{
-    text-shadow:0 0 8px #00ffee;
-}
-.footer{
-    text-align:center;
-    opacity:0.6;
-    font-size:14px;
-}
-</style>
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        /* SECTION 1: ABOUT */
+        .profile-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--primary);
+            margin-bottom: 15px;
+            object-fit: cover;
+            box-shadow: 0 0 15px var(--primary);
+        }
+
+        .glitch-text {
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: var(--primary);
+            text-transform: uppercase;
+        }
+
+        .info-grid {
+            text-align: left;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* SECTION 2: MY WORKS */
+        .section-title {
+            text-align: center;
+            font-size: 1.5rem;
+            margin: 40px 0 20px;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        .work-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .work-card {
+            background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
+            padding: 15px;
+            border-radius: 12px;
+            border-left: 4px solid var(--secondary);
+            transition: 0.3s;
+        }
+
+        .work-card:hover {
+            transform: translateY(-5px);
+            border-left: 4px solid var(--primary);
+        }
+
+        .work-card h4 {
+            margin: 0 0 5px 0;
+            font-size: 0.9rem;
+            color: var(--primary);
+        }
+
+        .work-card p {
+            margin: 0;
+            font-size: 0.75rem;
+            opacity: 0.8;
+        }
+
+        /* SECTION 3: CHANNELS & BOTS */
+        .link-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .link-item {
+            background: var(--card-bg);
+            margin: 10px 0;
+            padding: 12px 20px;
+            border-radius: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: 0.3s;
+        }
+
+        .link-item:hover {
+            background: rgba(255,255,255,0.15);
+            padding-left: 30px;
+        }
+
+        .tag {
+            font-size: 0.7rem;
+            background: var(--secondary);
+            padding: 2px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.7rem;
+            opacity: 0.5;
+            text-align: center;
+        }
+    </style>
 </head>
-
 <body>
-<div class="container">
 
-<!-- ABOUT -->
-<div class="card profile">
-    <img src="profile.jpg" alt="PROXY">
-    <h1>PROXY 🕸️𐏓𝟑</h1>
-    <div class="tagline">• CODE • CREATE • DOMINATE •</div>
-</div>
+    <div class="container">
+        
+        <div class="profile-card">
+            <img src="your-photo.jpg" alt="PROXY" class="profile-img">
+            <div class="glitch-text">P R O X Y 𐏓 𝟑</div>
+            <p style="font-size: 0.8rem; opacity: 0.7;">Living In My Own Glitched World 👾</p>
+            
+            <div class="info-grid">
+                <div class="info-item"><span>🕸️ USERNAME</span> <span>@Proxyfxz</span></div>
+                <div class="info-item"><span>🕸️ USER ID</span> <span>8210445482</span></div>
+                <div class="info-item"><span>🕸️ FROM</span> <span>West Bengal</span></div>
+                <div class="info-item"><span>🕸️ STUDY</span> <span>Engineering 👨‍💻</span></div>
+                <div class="info-item"><span>🕸️ BIRTH</span> <span>24 OCT 🕶️</span></div>
+            </div>
+            <p style="margin-top: 20px; font-weight: bold; font-size: 0.8rem;">• CODE • CREATE • DOMINATE •</p>
+        </div>
 
-<div class="card info">
-    <div class="section-title">🔻💻 ABOUT</div>
+        <h2 class="section-title">⚡ My Expertise</h2>
+        <div class="work-grid">
+            <div class="work-card">
+                <h4>Social Architect</h4>
+                <p>Advanced recovery & security for compromised assets.</p>
+            </div>
+            <div class="work-card">
+                <h4>Full-Stack Dev</h4>
+                <p>Crafting high-performance bots & custom web solutions.</p>
+            </div>
+            <div class="work-card">
+                <h4>Growth Hacker</h4>
+                <p>Organic & strategic expansion for IG/FB/YouTube.</p>
+            </div>
+            <div class="work-card">
+                <h4>Premium Assets</h4>
+                <p>Exclusive username brokerage & high-authority accounts.</p>
+            </div>
+        </div>
 
-    <p>⚡ <span class="highlight">Telegram Name:</span> PROXY 𐏓𝟑</p>
-    <p>🕸️ <span class="highlight">Username:</span> <a href="https://t.me/Proxyfxz">@Proxyfxz</a></p>
-    <p>🕸️ <span class="highlight">User ID:</span> 8210445482</p>
-    <p>🕸️ <span class="highlight">Profile Link:</span> <a href="https://t.me/Proxyfxz">t.me/Proxyfxz</a></p>
-    <p>🕸️ <span class="highlight">Birth:</span> 24 • OCT 🕶️</p>
-    <p>🕸️ <span class="highlight">From:</span> West Bengal</p>
-    <p>🕸️ <span class="highlight">Study:</span> 👨‍💻 Engineering</p>
-    <p>🕸️ <span class="highlight">Hobbies:</span> 🎶 Music • 🎮 Gaming • 💻 Programming</p>
+        <h2 class="section-title">🔗 My Network</h2>
+        
+        <h3 style="font-size: 1rem; color: var(--secondary);">📡 Channels</h3>
+        <div class="link-list">
+            <a href="https://t.me/proxydominates" class="link-item">@proxydominates <span class="tag">Main</span></a>
+            <a href="https://t.me/midnight_xaura" class="link-item">@midnight_xaura <span class="tag">Alpha</span></a>
+            <a href="https://t.me/proxymethodss" class="link-item">@proxymethodss <span class="tag">Methods</span></a>
+            <a href="https://t.me/proxyinxc" class="link-item">@proxyinxc <span class="tag">Backup</span></a>
+        </div>
 
-    <p class="highlight" style="margin-top:15px;">
-        Living In My Own Glitched World 👾⚡
-    </p>
-</div>
+        <h3 style="font-size: 1rem; color: var(--secondary); margin-top: 25px;">🤖 Active Bots</h3>
+        <div class="link-list">
+            <a href="https://t.me/sparkpr3m1um_bot" class="link-item">@sparkpr3m1um_bot <span class="tag" style="background:#00d146;">Online</span></a>
+            <a href="https://t.me/hyperbanning_bot" class="link-item">@hyperbanning_bot <span class="tag" style="background:#00d146;">Online</span></a>
+            <a href="https://t.me/Comfuker_bot" class="link-item">@Comfuker_bot <span class="tag" style="background:#00d146;">Online</span></a>
+        </div>
 
-<!-- MY WORKS -->
-<div class="card">
-    <div class="section-title">🚀 MY WORKS</div>
+        <footer>
+            &copy; 2026 PROXY | ALL RIGHTS RESERVED
+        </footer>
+    </div>
 
-    <ul>
-        <li>💼 Professional <b>Social Media Expert</b> with deep platform knowledge</li>
-        <li>🔐 Advanced <b>Social Media Recovery Specialist</b> (Instagram, Facebook, YouTube)</li>
-        <li>🤖 <b>Bot Developer</b> & <b>Website Developer</b> with automation mindset</li>
-        <li>💎 Trusted <b>Premium Instagram Account Seller</b></li>
-        <li>📈 High-quality <b>Instagram / Facebook / YouTube Growth Services</b></li>
-        <li>🧿 Exclusive <b>Premium Username Seller</b></li>
-    </ul>
-
-    <p class="highlight">
-        Turning Digital Presence into Power & Profit ⚡
-    </p>
-</div>
-
-<!-- CHANNELS -->
-<div class="card">
-    <div class="section-title">📡 MY CHANNELS</div>
-
-    <ul>
-        <li><a href="https://t.me/proxydominates">@proxydominates</a></li>
-        <li><a href="https://t.me/midnight_xaura">@midnight_xaura</a></li>
-        <li><a href="https://t.me/proxymethodss">@proxymethodss</a></li>
-        <li><span class="highlight">Backup:</span> <a href="https://t.me/proxyinxc">@proxyinxc</a></li>
-    </ul>
-</div>
-
-<!-- BOTS -->
-<div class="card">
-    <div class="section-title">🤖 MY BOTS</div>
-
-    <ul>
-        <li><a href="https://t.me/sparkpr3m1um_bot">@sparkpr3m1um_bot</a></li>
-        <li><a href="https://t.me/hyperbanning_bot">@hyperbanning_bot</a></li>
-        <li><a href="https://t.me/Comfuker_bot">@Comfuker_bot</a></li>
-        <li class="highlight">More bots coming soon… ⚙️</li>
-    </ul>
-</div>
-
-<div class="footer">
-    © PROXY 𐏓𝟑 | Cyber Business Portfolio
-</div>
-
-</div>
 </body>
 </html>
