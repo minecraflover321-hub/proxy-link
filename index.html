@@ -3,176 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROXY | DOMINATING THE GLITCH</title>
+    <title>PROXY | DIGITAL AUTHORITY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap');
-
         :root {
-            --neon-blue: #00d2ff;
-            --neon-pink: #ff0055;
-            --bg-black: #050505;
-            --card-glass: rgba(255, 255, 255, 0.03);
+            --neon: #00d2ff;
+            --bg: #000000;
+            --card: rgba(255, 255, 255, 0.05);
+            --border: rgba(0, 210, 255, 0.3);
         }
 
         body {
-            margin: 0;
+            margin: 0; padding: 0;
             font-family: 'Rajdhani', sans-serif;
-            background-color: var(--bg-black);
-            color: white;
+            background: var(--bg);
+            color: #fff;
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-image: radial-gradient(circle at 50% 10%, #111 0%, #000 100%);
-            overflow-x: hidden;
         }
 
-        .container { width: 95%; max-width: 450px; padding: 20px; box-sizing: border-box; }
+        .wrapper { width: 100%; max-width: 440px; padding: 20px; box-sizing: border-box; }
 
-        /* HEADER SECTION */
-        .profile-wrapper { text-align: center; margin-top: 30px; }
-        .profile-img {
-            width: 120px; height: 120px; border-radius: 50%;
-            border: 2px solid var(--neon-blue);
-            box-shadow: 0 0 25px var(--neon-blue), inset 0 0 15px var(--neon-blue);
-            object-fit: cover; margin-bottom: 15px;
+        /* Header Fix: No more boxes */
+        .profile-section { text-align: center; margin-top: 30px; }
+        .p-img {
+            width: 110px; height: 110px; border-radius: 50%;
+            border: 2px solid var(--neon); padding: 4px;
+            box-shadow: 0 0 20px var(--neon);
         }
+        .tagline { font-family: 'Orbitron', sans-serif; font-size: 10px; color: #666; letter-spacing: 4px; margin-top: 15px; }
+        .name { font-size: 32px; font-weight: 700; margin: 5px 0; color: #fff; letter-spacing: 1px; }
 
-        .glitch-header { font-family: 'Orbitron', sans-serif; font-size: 0.8rem; letter-spacing: 5px; color: #666; text-transform: uppercase; }
-        .main-title { font-size: 2rem; margin: 10px 0; color: #fff; text-shadow: 0 0 10px rgba(0, 210, 255, 0.5); }
+        /* Label styling */
+        .label {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 11px; color: var(--neon);
+            margin: 35px 0 15px; display: flex; align-items: center; gap: 10px;
+            letter-spacing: 2px;
+        }
+        .label::after { content: ""; height: 1px; flex-grow: 1; background: linear-gradient(90deg, var(--neon), transparent); }
 
-        /* GLASS CARD STYLE */
         .glass-card {
-            background: var(--card-glass);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 20px; padding: 20px; margin-bottom: 30px;
-            backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px; padding: 20px;
+            backdrop-filter: blur(10px);
         }
 
-        .section-tag {
-            display: inline-block; padding: 5px 15px; border-radius: 5px;
-            background: rgba(0, 210, 255, 0.1); color: var(--neon-blue);
-            font-weight: bold; font-size: 0.7rem; letter-spacing: 2px;
-            margin-bottom: 20px; border-left: 3px solid var(--neon-blue);
-        }
+        /* Business Details */
+        .row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.03); }
+        .row:last-child { border: none; }
+        .k { color: #666; font-size: 13px; font-weight: 600; }
+        .v { color: var(--neon); font-size: 16px; font-weight: 500; }
 
-        /* INFO LIST */
-        .info-row { display: flex; align-items: center; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.03); padding-bottom: 8px; }
-        .info-row span.key { color: #555; font-size: 0.8rem; font-weight: bold; width: 100px; text-transform: uppercase; }
-        .info-row span.val { color: var(--neon-blue); font-size: 1.1rem; font-weight: 500; }
+        /* EXPANDED WORKS SECTION */
+        .biz-item { margin-bottom: 25px; padding-left: 15px; border-left: 2px solid var(--neon); }
+        .biz-item:last-child { margin-bottom: 0; }
+        .biz-t { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 5px; }
+        .biz-d { font-size: 14px; color: #999; line-height: 1.5; }
 
-        /* WORKS SECTION (ADVANCED) */
-        .work-item { margin-bottom: 20px; position: relative; padding-left: 15px; }
-        .work-item::before { content: ''; position: absolute; left: 0; top: 5px; height: 80%; width: 2px; background: var(--neon-blue); }
-        .work-title { font-family: 'Orbitron', sans-serif; font-size: 0.95rem; color: #fff; margin-bottom: 5px; }
-        .work-desc { font-size: 0.85rem; color: #888; line-height: 1.4; }
-
-        /* NETWORKS (PRO BUTTONS) */
-        .net-btn {
+        /* Links */
+        .l-card {
             display: flex; align-items: center; justify-content: space-between;
-            background: linear-gradient(90deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
-            border: 1px solid rgba(255,255,255,0.1); border-radius: 12px;
-            padding: 15px; margin-bottom: 12px; text-decoration: none; color: #fff;
+            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);
+            padding: 16px; border-radius: 15px; text-decoration: none; color: #fff; margin-bottom: 12px;
             transition: 0.3s;
         }
-        .net-btn:hover { border-color: var(--neon-blue); background: rgba(0, 210, 255, 0.05); transform: scale(1.02); }
-        .net-btn .name { font-weight: 600; font-size: 1rem; }
-        .net-btn .tag { font-size: 0.65rem; color: var(--neon-blue); border: 1px solid var(--neon-blue); padding: 2px 8px; border-radius: 4px; }
+        .l-card:hover { border-color: var(--neon); background: rgba(0,210,255,0.1); transform: scale(1.02); }
+        .l-info b { font-size: 16px; display: block; }
+        .l-info span { font-size: 12px; color: #555; }
+        .dot { height: 8px; width: 8px; background: #00ff00; border-radius: 50%; box-shadow: 0 0 10px #00ff00; }
 
-        .pulse { height: 8px; width: 8px; background: #00ff00; border-radius: 50%; box-shadow: 0 0 10px #00ff00; animation: p 1.5s infinite; }
-        @keyframes p { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
-
-        .contact-btn {
-            display: block; text-align: center; background: var(--neon-blue); color: #000;
-            padding: 18px; border-radius: 15px; font-weight: bold; font-family: 'Orbitron', sans-serif;
-            text-decoration: none; margin: 40px 0; box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
-            transition: 0.3s; font-size: 1rem;
+        /* CONTACT BTN */
+        .main-btn {
+            display: block; background: var(--neon); color: #000;
+            text-align: center; padding: 18px; border-radius: 15px;
+            font-family: 'Orbitron', sans-serif; font-weight: 900;
+            text-decoration: none; margin: 40px 0; font-size: 16px;
+            box-shadow: 0 10px 30px rgba(0, 210, 255, 0.3);
         }
-        .contact-btn:hover { transform: translateY(-3px); box-shadow: 0 0 35px var(--neon-blue); }
 
-        .footer { text-align: center; color: #333; font-size: 0.7rem; letter-spacing: 3px; margin-bottom: 40px; }
+        .foot { text-align: center; font-size: 10px; color: #333; letter-spacing: 3px; margin-bottom: 30px; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="profile-wrapper">
-        <img src="https://via.placeholder.com/150" class="profile-img">
-        <div class="glitch-header">🔻💻 𝗔𝗕𝗢𝗨𝗧 ⚡</div>
-        <h1 class="main-title">❛ .𝁘ໍ⸼ 𝐏 𝐑 𝐎 𝐗 𝐘𐏓𝟑 🕸️</h1>
+<div class="wrapper">
+    <div class="profile-section">
+        <img src="https://via.placeholder.com/150" alt="PROXY" class="p-img">
+        <div class="tagline">AUTHORITY OVER GLITCH</div>
+        <div class="name">PROXY 𐏓𝟑</div>
     </div>
 
+    <div class="label">IDENTITY LOG</div>
     <div class="glass-card">
-        <div class="section-tag">IDENTITY.EXE</div>
-        <div class="info-row"><span class="key">⚡ NAME</span><span class="val">𝐏𝐑𝐎𝐗𝐘 𐏓𝟑 🪙</span></div>
-        <div class="info-row"><span class="key">🎧 USERNAME</span><span class="val">@Proxyfxz</span></div>
-        <div class="info-row"><span class="key">🎧 USER ID</span><span class="val">8210445482</span></div>
-        <div class="info-row"><span class="key">🎧 BIRTHDAY</span><span class="val">24 • OCT 🕶️</span></div>
-        <div class="info-row"><span class="key">🎧 FROM</span><span class="val">WEST BENGAL</span></div>
-        <div class="info-row"><span class="key">🎧 STUDY</span><span class="val">👨‍💻 ENGINEERING</span></div>
-        <div class="info-row" style="border:none;"><span class="key">🎧 HOBBIES</span><span class="val">MUSIC • GAMING • DEV</span></div>
+        <div class="row"><span class="k">USERNAME</span><span class="v">@Proxyfxz</span></div>
+        <div class="row"><span class="k">USER ID</span><span class="v">8210445482</span></div>
+        <div class="row"><span class="k">ORIGIN</span><span class="v">WEST BENGAL</span></div>
+        <div class="row"><span class="k">STATUS</span><span class="v">ENGINEERING</span></div>
     </div>
 
+    <div class="label">BUSINESS SERVICES</div>
     <div class="glass-card">
-        <div class="section-tag">CAPABILITIES.LOG</div>
-        <div class="work-item">
-            <div class="work-title">🛡️ BANNING & UNBANNING</div>
-            <div class="work-desc">Social Media Security expert. Recovers disabled accounts and handles Meta/YouTube policy violations with high success rate.</div>
+        <div class="biz-item">
+            <div class="biz-t">🛡️ Ban & Unban Services</div>
+            <div class="biz-d">Elite level account recovery. Handling permanent bans, disabled accounts, and policy violations on Meta & YouTube.</div>
         </div>
-        <div class="work-item">
-            <div class="work-title">📈 ALGORITHM DOMINATION</div>
-            <div class="work-desc">Helping brands scale. Expert in Instagram Reels and YouTube organic growth hacking and engagement optimization.</div>
+        <div class="biz-item">
+            <div class="biz-t">📈 Social Growth Hacking</div>
+            <div class="biz-d">Strategic organic growth for Instagram/FB/YT. Dominate the algorithm and scale your reach with proven methods.</div>
         </div>
-        <div class="work-item">
-            <div class="work-title">🛒 ACCOUNT PROVISIONING</div>
-            <div class="work-desc">Trusted seller of premium, niche-specific Instagram accounts with high engagement and clean history.</div>
+        <div class="biz-item">
+            <div class="biz-t">💎 Premium Asset Selling</div>
+            <div class="biz-d">Selling high-quality verified accounts, aged Instagram assets, and ultra-rare OG usernames. Safe & secure deals.</div>
         </div>
-        <div class="work-item" style="margin:0;">
-            <div class="work-title">💻 FULL-STACK DEVELOPMENT</div>
-            <div class="work-desc">Building advanced Telegram automation bots and high-performance glitched-themed websites.</div>
+        <div class="biz-item">
+            <div class="biz-t">💻 Code & Automation</div>
+            <div class="biz-d">Custom Python scripts, advanced Telegram bots, and professional business landing pages.</div>
         </div>
     </div>
 
-    <div class="glass-card">
-        <div class="section-tag">NETWORKS.JSON</div>
-        
-        <p style="font-size: 0.7rem; color: #444; margin-bottom: 10px;">• ACTIVE BOTS</p>
-        <a href="https://t.me/sparkpr3m1um_bot" class="net-btn">
-            <div><span class="name">Spark Premium</span><br><span class="username" style="font-size:0.7rem; color:#666;">@sparkpr3m1um_bot</span></div>
-            <div class="pulse"></div>
-        </a>
-        <a href="https://t.me/hyperbanning_bot" class="net-btn">
-            <div><span class="name">Hyper Banning</span><br><span class="username" style="font-size:0.7rem; color:#666;">@hyperbanning_bot</span></div>
-            <div class="pulse"></div>
-        </a>
-        <a href="https://t.me/Comfuker_bot" class="net-btn">
-            <div><span class="name">Comfuker Bot</span><br><span class="username" style="font-size:0.7rem; color:#666;">@Comfuker_bot</span></div>
-            <div class="pulse"></div>
-        </a>
+    <div class="label">NEURAL NETWORK</div>
+    <a href="https://t.me/sparkpr3m1um_bot" class="l-card">
+        <div class="l-info"><b>Spark Premium</b><span>@sparkpr3m1um_bot</span></div>
+        <div class="dot"></div>
+    </a>
+    <a href="https://t.me/hyperbanning_bot" class="l-card">
+        <div class="l-info"><b>Hyper Banning</b><span>@hyperbanning_bot</span></div>
+        <div class="dot"></div>
+    </a>
+    <a href="https://t.me/proxydominates" class="l-card">
+        <div class="l-info"><b>Proxy Dominates</b><span>Official Hub</span></div>
+        <b style="color:var(--neon); font-size:12px;">JOIN</b>
+    </a>
 
-        <p style="font-size: 0.7rem; color: #444; margin: 25px 0 10px;">• OFFICIAL CHANNELS</p>
-        <a href="https://t.me/proxydominates" class="net-btn">
-            <span class="name">Proxy Dominates</span>
-            <span class="tag">MAIN</span>
-        </a>
-        <a href="https://t.me/midnight_xaura" class="net-btn">
-            <span class="name">Midnight Xaura</span>
-            <span class="tag">COMMUNITY</span>
-        </a>
-        <a href="https://t.me/proxymethodss" class="net-btn">
-            <span class="name">Proxy Methods</span>
-            <span class="tag">VIP</span>
-        </a>
-        <a href="https://t.me/proxyinxc" class="net-btn" style="border-style: dashed;">
-            <span class="name">Safety Backup</span>
-            <span class="tag" style="color:#ff0055; border-color:#ff0055;">SECURE</span>
-        </a>
-    </div>
+    <a href="https://t.me/Proxyfxz" class="main-btn">ESTABLISH CONNECTION</a>
 
-    <a href="https://t.me/Proxyfxz" class="contact-btn">ESTABLISH CONNECTION</a>
-
-    <div class="footer">
-        • CODE • CREATE • DOMINATE •<br>
-        <span style="color:var(--neon-blue)">LIVING IN MY OWN GLITCHED WORLD 👾⚡</span>
+    <div class="foot">
+        CODE • CREATE • DOMINATE<br>
+        STAY GLITCHED
     </div>
 </div>
 
