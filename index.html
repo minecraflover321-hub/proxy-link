@@ -1,151 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROXY | Business Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --neon: #00d2ff;
-            --bg: #050505;
-            --card-bg: rgba(255, 255, 255, 0.04);
-            --border: rgba(0, 210, 255, 0.25);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PROXY | Cyber Portfolio</title>
 
-        body {
-            margin: 0; padding: 0;
-            font-family: 'Rajdhani', sans-serif;
-            background: var(--bg);
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .wrapper { width: 100%; max-width: 420px; padding: 20px; box-sizing: border-box; }
-
-        /* Header Fix - Clean & Professional */
-        .profile-section { text-align: center; margin-top: 40px; }
-        .p-img {
-            width: 110px; height: 110px; border-radius: 50%;
-            border: 2px solid var(--neon); padding: 3px;
-            box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
-        }
-        .name { font-size: 30px; font-weight: 700; margin: 15px 0 5px; letter-spacing: 1px; }
-        .tagline { font-size: 11px; color: #666; letter-spacing: 3px; font-family: 'Inter', sans-serif; text-transform: uppercase; }
-
-        /* Section Headers */
-        .label {
-            font-family: 'Inter', sans-serif;
-            font-size: 10px; color: var(--neon);
-            margin: 35px 0 15px; display: flex; align-items: center; gap: 10px;
-            letter-spacing: 2px; font-weight: 700; text-transform: uppercase;
-        }
-        .label::after { content: ""; height: 1px; flex-grow: 1; background: linear-gradient(90deg, var(--neon), transparent); opacity: 0.3; }
-
-        .glass-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 18px; padding: 22px;
-            backdrop-filter: blur(12px);
-        }
-
-        /* Identity Details */
-        .row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.03); }
-        .row:last-child { border: none; }
-        .k { color: #555; font-size: 13px; font-weight: 600; text-transform: uppercase; }
-        .v { color: #eee; font-size: 16px; font-weight: 500; }
-
-        /* BUSINESS WORKS SECTION (PRO STYLE) */
-        .biz-box { margin-bottom: 25px; }
-        .biz-box:last-child { margin-bottom: 0; }
-        .biz-t { font-size: 18px; font-weight: 700; color: var(--neon); margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
-        .biz-d { font-size: 14px; color: #999; line-height: 1.5; font-family: 'Inter', sans-serif; }
-
-        /* CHANNEL BUTTONS - RESTORED STYLE */
-        .l-card {
-            display: flex; align-items: center; justify-content: space-between;
-            background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08);
-            padding: 16px; border-radius: 14px; text-decoration: none; color: #fff; margin-bottom: 12px;
-            transition: 0.3s ease;
-        }
-        .l-card:hover { border-color: var(--neon); background: rgba(0,210,255,0.06); transform: translateX(5px); }
-        .l-card span { font-size: 16px; font-weight: 600; }
-        .dot { height: 7px; width: 7px; background: #00ff00; border-radius: 50%; box-shadow: 0 0 8px #00ff00; }
-
-        /* CONTACT BUTTON */
-        .main-btn {
-            display: block; background: var(--neon); color: #000;
-            text-align: center; padding: 18px; border-radius: 14px;
-            font-family: 'Inter', sans-serif; font-weight: 800;
-            text-decoration: none; margin: 40px 0; font-size: 15px;
-            box-shadow: 0 8px 25px rgba(0, 210, 255, 0.25);
-            text-transform: uppercase; letter-spacing: 1px;
-        }
-        .main-btn:hover { filter: brightness(1.1); transform: translateY(-2px); }
-
-        .foot { text-align: center; font-size: 10px; color: #333; letter-spacing: 3px; margin-bottom: 40px; font-family: 'Inter', sans-serif; }
-    </style>
+<style>
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at top, #0f2027, #000);
+    color:#eaeaea;
+}
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+.card{
+    background: rgba(255,255,255,0.05);
+    border-radius:16px;
+    padding:25px;
+    margin-bottom:30px;
+    box-shadow:0 0 25px rgba(0,255,255,0.08);
+}
+.profile{
+    text-align:center;
+}
+.profile img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    border:3px solid #00ffee;
+    box-shadow:0 0 20px #00ffee;
+}
+h1{
+    margin:15px 0 5px;
+    color:#00ffee;
+    letter-spacing:2px;
+}
+.tagline{
+    font-style:italic;
+    opacity:0.9;
+}
+.section-title{
+    font-size:22px;
+    margin-bottom:15px;
+    color:#00ffee;
+    border-bottom:1px solid rgba(0,255,255,0.3);
+    padding-bottom:8px;
+}
+.info p{
+    margin:6px 0;
+}
+.highlight{
+    color:#00ffee;
+}
+ul{
+    padding-left:20px;
+}
+ul li{
+    margin:10px 0;
+}
+a{
+    color:#00ffee;
+    text-decoration:none;
+}
+a:hover{
+    text-shadow:0 0 8px #00ffee;
+}
+.footer{
+    text-align:center;
+    opacity:0.6;
+    font-size:14px;
+}
+</style>
 </head>
+
 <body>
+<div class="container">
 
-<div class="wrapper">
-    <div class="profile-section">
-        <img src="https://via.placeholder.com/150" alt="PROXY" class="p-img">
-        <div class="name">PROXY 𐏓𝟑</div>
-        <div class="tagline">Social Media Solutions Expert</div>
-    </div>
-
-    <div class="label">Identity.log</div>
-    <div class="glass-card">
-        <div class="row"><span class="k">Consultant</span><span class="v">@Proxyfxz</span></div>
-        <div class="row"><span class="k">Location</span><span class="v">West Bengal, IN</span></div>
-        <div class="row"><span class="k">Education</span><span class="v">Engineering</span></div>
-        <div class="row"><span class="k">Specialty</span><span class="v">Digital Assets</span></div>
-    </div>
-
-    <div class="label">Professional Services</div>
-    <div class="glass-card">
-        <div class="biz-box">
-            <div class="biz-t">🛡️ Account Recovery</div>
-            <div class="biz-d">Professional restoration of disabled accounts. Specialist in handling complex policy violations on IG/FB/YT.</div>
-        </div>
-        <div class="biz-box">
-            <div class="biz-t">📈 Growth Marketing</div>
-            <div class="biz-d">Targeted organic scaling for digital creators. Leveraging algorithm triggers for maximum reach.</div>
-        </div>
-        <div class="biz-box">
-            <div class="biz-t">💎 Premium Asset Sales</div>
-            <div class="biz-d">Provisioning high-authority verified accounts and aged digital assets with clean histories.</div>
-        </div>
-        <div class="biz-box">
-            <div class="biz-t">✨ Exclusive Inventory</div>
-            <div class="biz-d">Dealing in rare/premium OG usernames and specialized social media handles for brand identity.</div>
-        </div>
-    </div>
-
-    <div class="label">Official Networks</div>
-    
-    <div style="font-size: 11px; color: #444; margin-bottom: 10px; padding-left: 5px;">PREMIUM BOTS</div>
-    <a href="https://t.me/sparkpr3m1um_bot" class="l-card"><span>Spark Premium</span><div class="dot"></div></a>
-    <a href="https://t.me/hyperbanning_bot" class="l-card"><span>Hyper Banning Bot</span><div class="dot"></div></a>
-    <a href="https://t.me/Comfuker_bot" class="l-card"><span>Comfuker Bot</span><div class="dot"></div></a>
-
-    <div style="font-size: 11px; color: #444; margin: 25px 0 10px; padding-left: 5px;">OFFICIAL CHANNELS</div>
-    <a href="https://t.me/proxydominates" class="l-card"><span>Proxy Dominates</span><b style="color:var(--neon); font-size:11px;">JOIN</b></a>
-    <a href="https://t.me/midnight_xaura" class="l-card"><span>Midnight Xaura</span><b style="color:var(--neon); font-size:11px;">JOIN</b></a>
-    <a href="https://t.me/proxymethodss" class="l-card"><span>Proxy Methods</span><b style="color:var(--neon); font-size:11px;">JOIN</b></a>
-    <a href="https://t.me/proxyinxc" class="l-card" style="border-style: dashed;"><span>Backup Channel</span><b style="color:var(--neon); font-size:11px;">SECURE</b></a>
-
-    <a href="https://t.me/Proxyfxz" class="main-btn">Contact for Inquiry</a>
-
-    <div class="foot">
-        ESTABLISHED DIGITAL AUTHORITY<br>
-        LIVING IN MY OWN GLITCHED WORLD
-    </div>
+<!-- ABOUT -->
+<div class="card profile">
+    <img src="profile.jpg" alt="PROXY">
+    <h1>PROXY 🕸️𐏓𝟑</h1>
+    <div class="tagline">• CODE • CREATE • DOMINATE •</div>
 </div>
 
+<div class="card info">
+    <div class="section-title">🔻💻 ABOUT</div>
+
+    <p>⚡ <span class="highlight">Telegram Name:</span> PROXY 𐏓𝟑</p>
+    <p>🕸️ <span class="highlight">Username:</span> <a href="https://t.me/Proxyfxz">@Proxyfxz</a></p>
+    <p>🕸️ <span class="highlight">User ID:</span> 8210445482</p>
+    <p>🕸️ <span class="highlight">Profile Link:</span> <a href="https://t.me/Proxyfxz">t.me/Proxyfxz</a></p>
+    <p>🕸️ <span class="highlight">Birth:</span> 24 • OCT 🕶️</p>
+    <p>🕸️ <span class="highlight">From:</span> West Bengal</p>
+    <p>🕸️ <span class="highlight">Study:</span> 👨‍💻 Engineering</p>
+    <p>🕸️ <span class="highlight">Hobbies:</span> 🎶 Music • 🎮 Gaming • 💻 Programming</p>
+
+    <p class="highlight" style="margin-top:15px;">
+        Living In My Own Glitched World 👾⚡
+    </p>
+</div>
+
+<!-- MY WORKS -->
+<div class="card">
+    <div class="section-title">🚀 MY WORKS</div>
+
+    <ul>
+        <li>💼 Professional <b>Social Media Expert</b> with deep platform knowledge</li>
+        <li>🔐 Advanced <b>Social Media Recovery Specialist</b> (Instagram, Facebook, YouTube)</li>
+        <li>🤖 <b>Bot Developer</b> & <b>Website Developer</b> with automation mindset</li>
+        <li>💎 Trusted <b>Premium Instagram Account Seller</b></li>
+        <li>📈 High-quality <b>Instagram / Facebook / YouTube Growth Services</b></li>
+        <li>🧿 Exclusive <b>Premium Username Seller</b></li>
+    </ul>
+
+    <p class="highlight">
+        Turning Digital Presence into Power & Profit ⚡
+    </p>
+</div>
+
+<!-- CHANNELS -->
+<div class="card">
+    <div class="section-title">📡 MY CHANNELS</div>
+
+    <ul>
+        <li><a href="https://t.me/proxydominates">@proxydominates</a></li>
+        <li><a href="https://t.me/midnight_xaura">@midnight_xaura</a></li>
+        <li><a href="https://t.me/proxymethodss">@proxymethodss</a></li>
+        <li><span class="highlight">Backup:</span> <a href="https://t.me/proxyinxc">@proxyinxc</a></li>
+    </ul>
+</div>
+
+<!-- BOTS -->
+<div class="card">
+    <div class="section-title">🤖 MY BOTS</div>
+
+    <ul>
+        <li><a href="https://t.me/sparkpr3m1um_bot">@sparkpr3m1um_bot</a></li>
+        <li><a href="https://t.me/hyperbanning_bot">@hyperbanning_bot</a></li>
+        <li><a href="https://t.me/Comfuker_bot">@Comfuker_bot</a></li>
+        <li class="highlight">More bots coming soon… ⚙️</li>
+    </ul>
+</div>
+
+<div class="footer">
+    © PROXY 𐏓𝟑 | Cyber Business Portfolio
+</div>
+
+</div>
 </body>
 </html>
