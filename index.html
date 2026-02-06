@@ -1,141 +1,97 @@
-<!DOCTYPE html>
+     <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROXY | Profile</title>
+    <title>PROXY | Digital Wizard</title>
     <style>
-        :root {
-            --primary-color: #00d2ff;
-            --bg-color: #080808;
-            --glass-bg: rgba(255, 255, 255, 0.05);
-            --border-color: rgba(255, 255, 255, 0.1);
-        }
+        :root { --blue: #00d2ff; --bg: #080808; --card: rgba(255,255,255,0.05); }
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; background: var(--bg); color: white; overflow-x: hidden; }
+        
+        .page { display: none; padding: 30px 20px; flex-direction: column; align-items: center; min-height: 100vh; animation: fadeIn 0.5s ease; }
+        .active { display: flex; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background-color: var(--bg-color);
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
-        }
+        .container { width: 100%; max-width: 400px; text-align: center; }
+        .profile-img { width: 110px; height: 110px; border-radius: 50%; border: 3px solid var(--blue); margin-bottom: 15px; box-shadow: 0 0 15px var(--blue); }
+        
+        .info-card { background: var(--card); border-radius: 15px; padding: 15px; text-align: left; margin: 20px 0; border: 1px solid rgba(255,255,255,0.1); width: 100%; }
+        .info-item { margin-bottom: 10px; border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 5px; }
+        .label { color: #888; font-size: 0.75rem; font-weight: bold; }
+        .value { color: var(--blue); font-size: 0.95rem; display: block; }
 
-        .container {
-            width: 90%;
-            max-width: 450px;
-            background: var(--glass-bg);
-            backdrop-filter: blur(15px);
-            border: 1px solid var(--border-color);
-            border-radius: 25px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .profile-img {
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            border: 3px solid var(--primary-color);
-            margin-bottom: 15px;
-            box-shadow: 0 0 15px var(--primary-color);
-            object-fit: cover;
-        }
-
-        h2.title { font-size: 1rem; color: #888; margin-bottom: 5px; letter-spacing: 2px; }
-        h1.main-name { font-size: 1.5rem; margin: 0 0 20px 0; color: #fff; }
-
-        .info-card {
-            background: rgba(255,255,255,0.03);
-            border-radius: 15px;
-            padding: 15px;
-            text-align: left;
-            margin-bottom: 20px;
-            border: 1px solid var(--border-color);
-        }
-
-        .info-item { margin-bottom: 12px; border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 5px; }
-        .label { color: #888; font-size: 0.75rem; font-weight: bold; display: block; }
-        .value { color: #00d2ff; font-size: 0.95rem; display: block; margin-top: 2px; }
-
-        .btn-main {
-            display: block;
-            background: var(--primary-color);
-            color: black;
-            padding: 12px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-bottom: 15px;
-            transition: 0.3s;
-        }
-
-        .nav-links {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
-        }
-
-        .nav-links a {
-            color: #666;
-            text-decoration: none;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover { color: var(--primary-color); }
-
-        .glitch-footer { font-size: 0.8rem; color: #444; margin-top: 20px; letter-spacing: 1px; }
+        .btn { display: block; width: 100%; background: var(--blue); color: black; padding: 12px; border-radius: 12px; text-decoration: none; font-weight: bold; margin-bottom: 10px; transition: 0.3s; box-sizing: border-box; }
+        .btn-outline { background: transparent; border: 1px solid #444; color: #aaa; margin-top: 10px; }
+        
+        .link-card { width: 100%; background: var(--card); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 12px; margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between; text-decoration: none; color: white; box-sizing: border-box; }
+        .status-dot { height: 8px; width: 8px; background: #00ff00; border-radius: 50%; box-shadow: 0 0 8px #00ff00; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <img src="https://telegra.ph/file/your-image-link.jpg" alt="PROXY" class="profile-img">
+    <div id="about" class="page active">
+        <div class="container">
+            <img src="https://via.placeholder.com/150" class="profile-img">
+            <h2 style="color:#888; font-size:0.9rem;">🔻💻 𝗔𝗕𝗢𝗨𝗧 ⚡</h2>
+            <h1 style="font-size:1.4rem;">❛ .𝁘ໍ⸼ 𝐏 𝐑 𝐎 𝐗 𝐘𐏓𝟑 🕸️</h1>
+            
+            <div class="info-card">
+                <div class="info-item"><span class="label">🕸️ USERNAME</span><span class="value">@Proxyfxz</span></div>
+                <div class="info-item"><span class="label">🕸️ FROM</span><span class="value">West Bengal</span></div>
+                <div class="info-item"><span class="label">🕸️ STUDY</span><span class="value">Engineering 👨‍💻</span></div>
+                <div class="info-item"><span class="label">🕸️ HOBBIES</span><span class="value">Music • Gaming • Programming</span></div>
+            </div>
 
-    <h2 class="title">🔻💻 𝗔𝗕𝗢𝗨𝗧 ⚡</h2>
-    <h1 class="main-name">❛ .𝁘ໍ⸼ 𝐏 𝐑 𝐎 𝐗 𝐘𐏓𝟑 🕸️</h1>
-
-    <div class="info-card">
-        <div class="info-item">
-            <span class="label">🕸️ 𝙏𝙀𝙇𝙀𝙂𝙍𝘼𝙈 𝙉𝘼𝙈𝙀</span>
-            <span class="value">⚡ 𝐏𝐑𝐎𝐗𝐘 𐏓𝟑 🪙</span>
-        </div>
-        <div class="info-item">
-            <span class="label">🕸️ 𝙐𝙎𝙀𝙍𝙉𝘼𝙈𝙀</span>
-            <span class="value">🎧 @Proxyfxz</span>
-        </div>
-        <div class="info-item">
-            <span class="label">🕸️ 𝙐𝙎𝙀𝙍 𝙄𝘿</span>
-            <span class="value">🎧 8210445482</span>
-        </div>
-        <div class="info-item">
-            <span class="label">🕸️ 𝘽𝙄𝙍𝙏𝙃</span>
-            <span class="value">🎧 24 • OCT 🕶️</span>
-        </div>
-        <div class="info-item">
-            <span class="label">🕸️ 𝙎𝙏𝙐𝘿𝙔</span>
-            <span class="value">🎧 👨‍💻 𝙀𝙣𝙜𝙞𝙣𝙚𝙚𝙧𝙞𝙣𝙜</span>
+            <a href="https://t.me/Proxyfxz" class="btn">CONTACT ME</a>
+            <button onclick="showPage('works')" class="btn btn-outline">📂 VIEW MY WORKS</button>
+            <button onclick="showPage('links')" class="btn btn-outline">🚀 MY CHANNELS</button>
         </div>
     </div>
 
-    <a href="https://t.me/Proxyfxz" class="btn-main">CONTACT PROXY</a>
-
-    <div class="nav-links">
-        <a href="works.html">[ MY WORKS ]</a>
-        <a href="links.html">[ CHANNELS ]</a>
+    <div id="works" class="page">
+        <div class="container">
+            <h1 style="color:var(--blue)">⚡ MY SERVICES</h1>
+            <div class="info-card">
+                <h3>🛡️ Banning/Unbanning</h3>
+                <p style="font-size:0.85rem; color:#aaa;">Expert recovery of disabled Social Media accounts.</p>
+            </div>
+            <div class="info-card">
+                <h3>📈 Social Growth</h3>
+                <p style="font-size:0.85rem; color:#aaa;">Helping you dominate Instagram & YouTube algorithms.</p>
+            </div>
+            <div class="info-card">
+                <h3>💻 Programming</h3>
+                <p style="font-size:0.85rem; color:#aaa;">Building high-end Telegram bots & Web apps.</p>
+            </div>
+            <button onclick="showPage('about')" class="btn btn-outline">← BACK</button>
+        </div>
     </div>
 
-    <div class="glitch-footer">
-        • CODE • CREATE • DOMINATE •<br>
-        Living In My Own Glitched World 👾
-    </div>
-</div>
+    <div id="links" class="page">
+        <div class="container">
+            <h1 style="color:var(--blue)">🚀 NETWORKS</h1>
+            
+            <p style="text-align:left; font-size:0.7rem; color:#555;">BOTS</p>
+            <a href="https://t.me/sparkpr3m1um_bot" class="link-card"><span>Spark Premium</span><div class="status-dot"></div></a>
+            <a href="https://t.me/hyperbanning_bot" class="link-card"><span>Hyper Banning</span><div class="status-dot"></div></a>
+            <a href="https://t.me/Comfuker_bot" class="link-card"><span>Comfuker Bot</span><div class="status-dot"></div></a>
 
+            <p style="text-align:left; font-size:0.7rem; color:#555; margin-top:20px;">CHANNELS</p>
+            <a href="https://t.me/proxydominates" class="link-card"><span>Proxy Dominates</span></a>
+            <a href="https://t.me/midnight_xaura" class="link-card"><span>Midnight Xaura</span></a>
+            <a href="https://t.me/proxymethodss" class="link-card"><span>Proxy Methods</span></a>
+
+            <button onclick="showPage('about')" class="btn btn-outline" style="margin-top:30px;">← BACK TO PROFILE</button>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+            window.scrollTo(0,0);
+        }
+    </script>
 </body>
 </html>
+       
